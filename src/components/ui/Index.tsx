@@ -35,7 +35,7 @@ const Index = () => {
             "description": "Agencia de desarrollo web en el Oriente Antioqueño",
             "url": "https://valendevs.com",
             "telephone": "+573001234567",
-            "email": "hola@valendevs.com",
+            "email": "info@valendevs.com",
             "areaServed": [
               "Rionegro",
               "La Ceja", 

@@ -103,11 +103,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hola@valendevs.com"
+                  href="mailto:info@valendevs.com"
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
                   <Mail className="w-4 h-4" />
-                  hola@valendevs.com
+                  info@valendevs.com
                 </a>
               </li>
               <li>
