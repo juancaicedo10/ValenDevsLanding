@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Instagram, Facebook, Linkedin, Mail, Phone } from "lucide-react";
+import { Code2, Instagram, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,10 +44,11 @@ const Footer = () => {
                 negocio.
               </p>
               <div className="flex gap-4">
-                {[Instagram, Facebook, Linkedin].map((Icon, index) => (
+                {[Instagram].map((Icon, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href="https://www.instagram.com/valen_devs/"
+                    target="_blank"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
