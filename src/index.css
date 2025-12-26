@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ValenDevs Cyberpunk Design System */
+
+@layer base {
+  :root {
+    /* Deep Dark Background */
+    --background: 240 15% 4%;
+    --foreground: 210 40% 98%;
+
+    /* Card with glassmorphism */
+    --card: 240 15% 8%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover */
+    --popover: 240 15% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Electric Cyan */
+    --primary: 185 100% 50%;
+    --primary-foreground: 240 15% 4%;
+
+    /* Secondary - Magenta/Purple */
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted */
+    --muted: 240 10% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent - Electric Blue */
+    --accent: 220 100% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders */
+    --border: 240 10% 20%;
+    --input: 240 10% 15%;
+    --ring: 185 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Neon Glow Colors */
+    --neon-cyan: 185 100% 50%;
+    --neon-magenta: 300 100% 60%;
+    --neon-blue: 220 100% 60%;
+    --neon-purple: 280 100% 60%;
+
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(185, 100%, 50%), hsl(280, 100%, 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(185, 100%, 50%), hsl(220, 100%, 60%), hsl(280, 100%, 60%));
+    --gradient-card: linear-gradient(135deg, hsl(240, 15%, 8%), hsl(240, 15%, 12%));
+
+    /* Glassmorphism */
+    --glass-bg: hsla(240, 15%, 8%, 0.7);
+    --glass-border: hsla(185, 100%, 50%, 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 240 15% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 240 15% 4%;
+    --sidebar-accent: 240 10% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 185 100% 50%;
+  }
+
+  .dark {
+    --background: 240 15% 4%;
+    --foreground: 210 40% 98%;
+    --card: 240 15% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 240 15% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 240 15% 4%;
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 220 100% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 10% 20%;
+    --input: 240 10% 15%;
+    --ring: 185 100% 50%;
+    --sidebar-background: 240 15% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 240 15% 4%;
+    --sidebar-accent: 240 10% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 185 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: hsla(240, 15%, 8%, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(185, 100%, 50%, 0.15);
+    box-shadow: 
+      0 0 30px hsla(185, 100%, 50%, 0.05),
+      inset 0 1px 0 hsla(185, 100%, 50%, 0.1);
+  }
+
+  .glass-card:hover {
+    border-color: hsla(185, 100%, 50%, 0.3);
+    box-shadow: 
+      0 0 40px hsla(185, 100%, 50%, 0.1),
+      0 0 80px hsla(280, 100%, 60%, 0.05),
+      inset 0 1px 0 hsla(185, 100%, 50%, 0.2);
+  }
+
+  /* Neon Button */
+  .neon-button {
+    @apply relative px-8 py-4 font-semibold text-background rounded-xl overflow-hidden;
+    background: linear-gradient(135deg, hsl(185, 100%, 50%), hsl(280, 100%, 60%));
+    box-shadow: 
+      0 0 20px hsla(185, 100%, 50%, 0.4),
+      0 0 40px hsla(280, 100%, 60%, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .neon-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 0 30px hsla(185, 100%, 50%, 0.6),
+      0 0 60px hsla(280, 100%, 60%, 0.4),
+      0 0 100px hsla(185, 100%, 50%, 0.2);
+  }
+
+  /* Neon Text */
+  .neon-text {
+    background: linear-gradient(135deg, hsl(185, 100%, 50%), hsl(280, 100%, 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .neon-text-glow {
+    text-shadow: 
+      0 0 10px hsla(185, 100%, 50%, 0.5),
+      0 0 20px hsla(185, 100%, 50%, 0.3),
+      0 0 40px hsla(280, 100%, 60%, 0.2);
+  }
+
+  /* Circuit Lines Background */
+  .circuit-bg {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsla(185, 100%, 50%, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsla(280, 100%, 60%, 0.03) 0%, transparent 50%),
+      linear-gradient(hsla(185, 100%, 50%, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(185, 100%, 50%, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+  }
+
+  /* Glow Effect */
+  .glow-cyan {
+    box-shadow: 0 0 20px hsla(185, 100%, 50%, 0.3);
+  }
+
+  .glow-magenta {
+    box-shadow: 0 0 20px hsla(300, 100%, 60%, 0.3);
+  }
+
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsla(185, 100%, 50%, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsla(185, 100%, 50%, 0.5), 0 0 60px hsla(280, 100%, 60%, 0.3);
+    }
+  }
+
+  /* Gradient Border */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(185, 100%, 50%), hsl(280, 100%, 60%));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Popular Badge */
+  .popular-badge {
+    @apply absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-bold uppercase rounded-full;
+    background: linear-gradient(135deg, hsl(185, 100%, 50%), hsl(280, 100%, 60%));
+    color: hsl(240, 15%, 4%);
+    box-shadow: 0 0 20px hsla(185, 100%, 50%, 0.5);
+  }
+}
