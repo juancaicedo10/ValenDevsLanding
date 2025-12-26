@@ -3,7 +3,7 @@ import { ArrowRight, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden circuit-bg">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden circuit-bg">
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

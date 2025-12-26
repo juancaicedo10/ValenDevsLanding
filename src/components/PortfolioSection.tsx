@@ -41,7 +41,7 @@ const testimonials = [
 
 const PortfolioSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="portafolio" className="py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 circuit-bg" />
 

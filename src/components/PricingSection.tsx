@@ -77,7 +77,7 @@ const cardVariants = {
 
 const PricingSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="precios" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div

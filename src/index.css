@@ -73,6 +73,19 @@
     --sidebar-ring: 185 100% 50%;
   }
 
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
   .dark {
     --background: 240 15% 4%;
     --foreground: 210 40% 98%;

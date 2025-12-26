@@ -49,7 +49,7 @@ const cardVariants = {
 
 const BenefitsSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="servicios" className="py-24 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 opacity-30">
         <div

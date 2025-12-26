@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
-  { name: "Inicio", href: "#" },
+  { name: "Inicio", href: "#inicio" },
   { name: "Servicios", href: "#servicios" },
   { name: "Portafolio", href: "#portafolio" },
   { name: "Precios", href: "#precios" },
@@ -38,8 +39,8 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Code2 className="w-5 h-5 text-primary-foreground" />
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center overflow-hidden">
+                <img src={logo} alt="ValenDevs Logo" className="w-full h-full object-cover" />
               </div>
               <span className="font-display text-xl font-bold neon-text">
                 ValenDevs

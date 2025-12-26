@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative pt-20 pb-8 overflow-hidden">
+    <footer id="contacto" className="relative pt-20 pb-8 overflow-hidden">
       {/* Top Border Gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
@@ -70,14 +70,19 @@ const Footer = () => {
               Enlaces Rápidos
             </h4>
             <ul className="space-y-3">
-              {["Inicio", "Servicios", "Portafolio", "Precios", "Contacto"].map(
-                (link) => (
-                  <li key={link}>
+              {[
+                { name: "Inicio", href: "#inicio" },
+                { name: "Servicios", href: "#servicios" },
+                { name: "Portafolio", href: "#portafolio" },
+                { name: "Precios", href: "#precios" },
+                { name: "Contacto", href: "#contacto" }
+              ].map((link) => (
+                  <li key={link.name}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
-                      {link}
+                      {link.name}
                     </a>
                   </li>
                 )
