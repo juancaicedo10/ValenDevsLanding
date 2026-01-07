@@ -5,49 +5,30 @@ const pricingPlans = [
   {
     name: "Landing Page",
     description: "Para negocios que necesitan presencia ya",
-    price: "1.200.000",
+    price: "100.000",
     icon: Rocket,
     features: [
       "Diseño personalizado",
       "Optimización móvil",
       "Formulario de contacto",
-      "Hosting por 1 año",
+      "Hosting incluido",
       "Dominio .com incluido",
       "Certificado SSL",
-    ],
-    popular: false,
-  },
-  {
-    name: "Sitio Corporativo",
-    description: "Para empresas de servicios y consultoría en crecimiento",
-    price: "2.500.000",
-    icon: Building2,
-    features: [
-      "Hasta 8 páginas",
-      "Blog integrado",
-      "Panel de administración",
-      "SEO avanzado",
-      "Integración redes sociales",
-      "Soporte prioritario 6 meses",
-      "Analíticas de visitas",
-      "WhatsApp Business integrado",
     ],
     popular: true,
   },
   {
-    name: "E-Commerce",
-    description: "Vende tus productos a todo Colombia 24/7",
-    price: "4.500.000",
-    icon: ShoppingCart,
+    name: "Sitio Corporativo",
+    description: "Para empresas de servicios y consultoría en crecimiento",
+    price: "500.000",
+    icon: Building2,
     features: [
-      "Catálogo ilimitado",
-      "Pasarela de pagos",
-      "Gestión de inventario",
-      "Envíos automatizados",
-      "Dashboard de ventas",
-      "App móvil básica",
-      "Soporte 12 meses",
-      "Capacitación incluida",
+      "Hasta 8 páginas",
+      "Blog integrado",
+      "SEO avanzado",
+      "Integración redes sociales",
+      "Soporte prioritario 6 meses",
+      "Analíticas de visitas",
     ],
     popular: false,
   },
@@ -103,7 +84,7 @@ const PricingSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Planes a tu <span className="neon-text">Medida</span>
@@ -120,19 +101,22 @@ const PricingSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"
+          className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto"
         >
           {pricingPlans.map((plan) => (
             <motion.div
               key={plan.name}
               variants={cardVariants}
-              className={`relative group ${plan.popular ? "md:-mt-4 md:mb-[-16px]" : ""}`}
+              className={`relative group ${
+                plan.popular ? "md:-mt-4 md:mb-[-16px]" : ""
+              }`}
             >
               {/* Popular Badge */}
+
               {plan.popular && <div className="popular-badge">Más Vendido</div>}
 
               <div
-                className={`glass-card p-8 h-full transition-all duration-500 hover:translate-y-[-4px] ${
+                className={`glass-card p-8 h-full mt-5 items-center md:items-start flex flex-col transition-all duration-500 hover:translate-y-[-4px] ${
                   plan.popular ? "border-primary/30" : ""
                 }`}
               >
@@ -152,11 +136,13 @@ const PricingSection = () => {
                 {/* Price */}
                 <div className="mb-8">
                   <span className="text-muted-foreground text-sm">Desde</span>
-                  <div className="flex items-baseline gap-1">
+                  <div className="flex-col xs:flex items-baseline gap-1">
                     <span className="text-4xl font-display font-bold neon-text">
                       ${plan.price}
                     </span>
-                    <span className="text-muted-foreground">COP</span>
+                    <span className="text-muted-foreground text-sm max-w-[100px]">
+                      COP / MES
+                    </span>
                   </div>
                 </div>
 
@@ -176,7 +162,7 @@ const PricingSection = () => {
 
                 {/* CTA Button */}
                 <button
-                  className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
+                  className={`w-[90%] md:w-[70%] md:w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
                     plan.popular
                       ? "neon-button"
                       : "border border-border hover:border-primary/50 text-foreground hover:bg-card"
@@ -209,7 +195,8 @@ const PricingSection = () => {
           transition={{ delay: 0.5 }}
           className="text-center text-muted-foreground mt-12 text-sm"
         >
-          Todos los planes incluyen garantía de satisfacción. Pagos flexibles disponibles.
+          Todos los planes incluyen garantía de satisfacción. Pagos flexibles
+          disponibles.
         </motion.p>
       </div>
     </section>
